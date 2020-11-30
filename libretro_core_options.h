@@ -56,8 +56,8 @@ struct retro_core_option_definition option_defs_us[] = {
 
    {
       "catsfc_VideoMode",
-      "Console Region",
-      "Specify which region the system is from. 'PAL' is 50hz, 'NTSC' is 60hz. Games will run faster or slower than normal if the incorrect region is selected.",
+      "系统制式",
+      "指定系统制式. 'PAL'制是50hz, 'NTSC'制是60hz. 如果选择了不正确的制式, 游戏可能会运行偏快或者偏慢.",
       {
          { "auto", "Auto" },
          { "NTSC", NULL },
@@ -68,20 +68,20 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "catsfc_frameskip",
-      "Frameskip",
-      "Skip frames to avoid audio buffer under-run (crackling). Improves performance at the expense of visual smoothness. 'Auto' skips frames when advised by the frontend. 'Manual' utilises the 'Frameskip Threshold (%)' setting.",
+      "跳帧",
+      "跳帧避免破音. 改善表现牺牲流畅度. '自动' 根据前台建议跳帧. '手动' 利用跳帧阈值 (%)'设定跳帧.",
       {
          { "disabled", NULL },
-         { "auto",     "Auto" },
-         { "manual",   "Manual" },
+         { "auto",     "自动" },
+         { "manual",   "手动" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "catsfc_frameskip_threshold",
-      "Frameskip Threshold (%)",
-      "When 'Frameskip' is set to 'Manual', specifies the audio buffer occupancy threshold (percentage) below which frames will be skipped. Higher values reduce the risk of crackling by causing frames to be dropped more frequently.",
+      "跳帧阈值(%)",
+      "'跳帧'设定成'手动'时, 指定的音频缓冲占比低于阈值时跳帧. 值越高丢帧越多, 但破音几率更低.",
       {
          { "15", NULL },
          { "18", NULL },
@@ -105,11 +105,11 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "catsfc_overclock_cycles",
-      "Reduce Slowdown (Hack, Unsafe, Restart)",
-      "Many games for the SNES suffered from slowdown due to the weak main CPU. This option helps allievate that at the cost of possible bugs. COMPATIBLE: Reduce slowdown but keep as much game compatibility as much as possible. MAX: Reduce slowdown as much as possible but will break more games.",
+      "减少拖慢 (Hack, 不安全, 需重启)",
+      "由于主CPU较弱,SFC的许多游戏都出现了拖慢的情况. 此选项有助于消除这种情况, 但要以可能的错误为代价. 兼容: 降低速度, 但要尽可能保持游戏兼容性. MAX: 尽可能降低速度, 但会破坏更多游戏. ",
       {
          { "disabled",   NULL },
-         { "compatible", "Compatible" },
+         { "compatible", "兼容" },
          { "max",        "Max" },
          { NULL, NULL },
       },
@@ -117,12 +117,12 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "catsfc_reduce_sprite_flicker",
-      "Reduce Flickering (Hack, Unsafe)",
-      "Raises sprite limit to reduce flickering in games.",
+      "减少闪烁 (Hack, 不安全)",
+      "增加屏幕上可以同时绘制的活动块数量. ",
       {
-         { "disabled", NULL },
-         { "enabled",  NULL },
-         { NULL, NULL },
+         { "disabled", "禁用" },
+         { "enabled",  "启用" },
+         { NULL, NULL},
       },
       "disabled"
    },
